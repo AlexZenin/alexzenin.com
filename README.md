@@ -4,8 +4,6 @@ This is my personal website, and the first project (in hopefully a line of proje
 
 This site is build using [react](https://reactjs.org/) and [create-react-app](https://github.com/facebook/create-react-app). All functional components contain CSS within the same file thanks to [styled-components](https://styled-components.com). For the overall layout I've used **CSS Grid**, while **Flexbox** is used for positioning elements in one dimension. I've also used [Semantic-UI](https://semantic-ui.com) for overall styling, and the menu component. The site is fully responsive.
 
-Demo: http://alexzenin.com
-
 ### Installing & Running
 
 Install Dependencies:
