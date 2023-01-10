@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle = "Tags"
+const allPosts = await Astro.glob('../posts/*.md')
+const allTags = allPosts.flatMap(post => post.frontmatter.tags)
+const uniqueTags = [...new Set(allTags)]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h1>hello, these are my tags:</h1>
+    <div class="tags">
+        {uniqueTags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
+</BaseLayout>
+
+<style>
+  a {
+    color: #00539F;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+</style>
