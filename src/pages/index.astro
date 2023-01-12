@@ -5,6 +5,5 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 
 <BaseLayout pageTitle="landing">
     <h1>hello bitches</h1>
-    <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
     <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 </BaseLayout>
