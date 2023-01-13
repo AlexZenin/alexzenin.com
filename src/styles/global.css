@@ -1,18 +1,25 @@
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+:root {
+    --color-background: #fafafa;
+    --color-foreground: #222;
+    --color-font-less-contrast: #bababa;
+    --color-hightlight: #bf883b;
 }
 
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 80vh;
+    display: grid;
+    place-items: center;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
 }
 
 h1 {

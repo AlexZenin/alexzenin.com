@@ -1,9 +1,102 @@
 ---
-import Greeting from "../components/Greeting";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import LinkedinIcon from "../components/icons/LinkedinIcon.astro";
+import TwitterIcon from "../components/icons/TwitterIcon.astro";
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
-<BaseLayout pageTitle="landing">
-    <h1>hello bitches</h1>
-    <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+<BaseLayout>
+  <main>
+    <hgroup>
+      <h1>Alex Zenin</h1>
+      <h2>Software Engineer</h2>
+    </hgroup>
+    <section>
+      <p>Full-stack software engineer at <a href="https://reecetech.com.au" target="_blank">Reece</a>.
+        <p>
+          During my spare time, I work on a platform called <a href="https://eventspaceapp.com" target="_blank">Eventspace</a> that lets university students find events happening on campus
+        </p>
+      </p>
+    </section>
+    <nav>
+      <a href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
+      <a href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
+      <a href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
+    </nav>
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    max-width: 500px;
+    padding: 3rem 1.4rem;
+    animation: intro .4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
+  }
+
+  p {
+    line-height: 1.6rem;
+  }
+
+  figure {
+    margin-bottom: 1rem;
+  }
+
+  section {
+    margin-top: 2.2rem;
+  }
+
+  hgroup {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--color-font-less-contrast);
+  }
+
+  img {
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-hightlight);
+  }
+
+  nav {
+    margin-top: 2.3rem;
+  }
+
+  nav>a {
+    margin-right: 1.8rem;
+  }
+
+  @keyframes intro {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- Global CSS since it targets the path element which is contained in other components -->
+<style is:global>
+    nav>a:hover path {
+        fill: var(--color-foreground)
+    }
+
+    nav svg path {
+        fill: var(--color-font-less-contrast);
+    }
+</style>
