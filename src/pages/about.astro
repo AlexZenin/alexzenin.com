@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+
+const pageTitle = "About me"
+const hobbies = ["Programming", "cooking", "poker"]
+
+const skillColour = "red"
+const fontWeight = "bold";
+const textCase = "uppercase";
+
+function getTitle() {
+    return pageTitle
+}
+---
+<html>
+    <head>
+        <title>{getTitle()}</title>
+        <style define:vars={{skillColour, fontWeight, textCase}}>
+            h1 {
+            color: purple;
+            font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColour);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
+    </head>
+    <body>
+        <Header />
+        <h1>{getTitle()}</h1>
+        <p>This is a page about me.</p>
+        <p>My hobbies are:</p>
+        <ul>{hobbies.map(hobby => <li class="skill">{hobby}</li>)}</ul>
+    </body>
+</html>
