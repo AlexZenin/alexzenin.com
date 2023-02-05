@@ -14,7 +14,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     <section>
       <p>Full-stack software engineer at <a href="https://reecetech.com.au" target="_blank">Reece</a>.
         <p>
-          During my spare time, I work on a platform called <a href="https://eventspaceapp.com" target="_blank">Eventspace</a> that lets university students find events happening on campus
+          During my spare time, I work on a platform called <span class="bold">Eventspace</span> that lets university students find events happening on campus
         </p>
       </p>
     </section>
@@ -63,6 +63,10 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     max-height: 400px;
     max-width: 100%;
     object-fit: contain;
+  }
+
+  .bold {
+    font-weight: 600;
   }
 
   a {
