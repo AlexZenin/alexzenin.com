@@ -6,88 +6,31 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
 <BaseLayout>
-  <main>
-    <hgroup>
-      <h1>Alex Zenin</h1>
-      <h2>Software Engineer</h2>
+  <main class="max-w-[544px] px-6 py-12">
+    <hgroup class="font-poppins">
+      <h1 class="text-4xl mb-2">Alex Zenin</h1>
+      <h2 class="text-lg text-gray-400">Software Engineer</h2>
     </hgroup>
-    <section>
-      <p>Full-stack software engineer at <a href="https://reecetech.com.au" target="_blank">Reece</a>.
-        <p>
-          During my spare time, I work on a platform called <span class="bold">Eventspace</span> that lets university students find events happening on campus
-        </p>
-      </p>
+    <section class="mt-9">
+      <p class="leading-relaxed">Full-stack software engineer at <a class="font-semibold no-underline text-yellow-600" href="https://reecetech.com.au" target="_blank">Reece</a>.</p>
+      <p class="leading-relaxed">During my spare time, I work on a platform called <span class="font-semibold">Eventspace</span> that lets university students find events happening on campus</p>
     </section>
-    <nav>
-      <a href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
-      <a href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
-      <a href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
+    <nav class="flex flex-row items-baseline mt-9">
+      <a class="mr-7" href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
+      <a class="mr-7" href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
+      <a class="mr-7" href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
     </nav>
   </main>
 </BaseLayout>
 
 <style>
   main {
-    max-width: 500px;
-    padding: 3rem 1.4rem;
     animation: intro .4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
   }
-
-  p {
-    line-height: 1.6rem;
-  }
-
-  figure {
-    margin-bottom: 1rem;
-  }
-
-  section {
-    margin-top: 2.2rem;
-  }
-
-  hgroup {
-    font-family: 'Poppins', sans-serif;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.3rem;
-  }
-
-  h2 {
-    font-size: 1.1rem;
-    color: var(--color-font-less-contrast);
-  }
-
-  img {
-    max-height: 400px;
-    max-width: 100%;
-    object-fit: contain;
-  }
-
-  .bold {
-    font-weight: 600;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-hightlight);
-  }
-
-  nav {
-    margin-top: 2.3rem;
-  }
-
-  nav>a {
-    margin-right: 1.8rem;
-  }
-
   @keyframes intro {
     from {
       opacity: 0;
     }
-
     to {
       opacity: 1;
     }

@@ -22,6 +22,10 @@ html {
     color: var(--color-foreground);
 }
 
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
