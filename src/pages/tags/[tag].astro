@@ -7,14 +7,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 export async function getStaticPaths() {
   const allPosts = await Astro.glob('../posts/*.md')
 
-  const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
-  ]
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.tags.includes(tag)
-    )
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag))
     // Returns:
     // - params (what to call each page route)
     // - and optionally any props (data that you want passed to those pages)
@@ -32,10 +28,6 @@ const { posts } = Astro.props
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
-    {
-      posts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
+    {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
 </BaseLayout>
