@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Dependency Injection in ReactJS"
+title: 'Dependency Injection in ReactJS'
 draft: true
 pubDate: 2023-01-29
-description: ""
-author: ""
+description: ''
+author: ''
 image:
-  url: ""
-  alt: ""
-tags: ["blogging"]
+  url: ''
+  alt: ''
+tags: ['blogging']
 ---
 
 ## Dependency Injection In ReactJS

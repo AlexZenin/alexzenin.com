@@ -1,8 +1,8 @@
 ---
-import GithubIcon from "../components/icons/GithubIcon.astro";
-import LinkedinIcon from "../components/icons/LinkedinIcon.astro";
-import TwitterIcon from "../components/icons/TwitterIcon.astro";
-import BaseLayout from "../layouts/BaseLayout.astro"
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import LinkedinIcon from '../components/icons/LinkedinIcon.astro'
+import TwitterIcon from '../components/icons/TwitterIcon.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
@@ -12,24 +12,42 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       <h2 class="text-lg text-gray-400">Full-stack Software Engineer</h2>
     </hgroup>
     <section class="mt-9">
-      <p class="leading-relaxed">Full-stack software engineer at <a class="font-semibold no-underline text-yellow-600" href="https://reecetech.com.au" target="_blank">Reece</a>.</p>
-      <p class="leading-relaxed">During my spare time, I work on a platform called <span class="font-semibold">Eventspace</span> that lets university students find events happening on campus</p>
+      <p class="leading-relaxed">
+        Full-stack software engineer at <a
+          class="font-semibold no-underline text-yellow-600"
+          href="https://reecetech.com.au"
+          target="_blank">Reece</a
+        >.
+      </p>
+      <p class="leading-relaxed">
+        During my spare time, I work on a platform called <span
+          class="font-semibold">Eventspace</span
+        > that lets university students find events happening on campus
+      </p>
     </section>
     <section>
       <h2 class="mt-9 text-lg text-gray-400">What I'm working on</h2>
-        <h1></h1>
+      <h1></h1>
     </section>
     <nav class="flex flex-row items-baseline mt-9">
-      <a class="mr-7" href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
-      <a class="mr-7" href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
-      <a class="mr-7" href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
+      <a class="mr-7" href="https://twitter.com/alexzenin2" target="_blank"
+        ><TwitterIcon /></a
+      >
+      <a class="mr-7" href="https://github.com/alexzenin" target="_blank"
+        ><GithubIcon /></a
+      >
+      <a
+        class="mr-7"
+        href="https://www.linkedin.com/in/alexanderzenin/"
+        target="_blank"><LinkedinIcon /></a
+      >
     </nav>
   </main>
 </BaseLayout>
 
 <style>
   main {
-    animation: intro .4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
+    animation: intro 0.4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
   }
   @keyframes intro {
     from {
@@ -43,11 +61,11 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 
 <!-- Global CSS since it targets the path element which is contained in other components -->
 <style is:global>
-    nav>a:hover path {
-        fill: var(--color-foreground)
-    }
+  nav > a:hover path {
+    fill: var(--color-foreground);
+  }
 
-    nav svg path {
-        fill: var(--color-font-less-contrast);
-    }
+  nav svg path {
+    fill: var(--color-font-less-contrast);
+  }
 </style>
