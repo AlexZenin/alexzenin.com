@@ -9,62 +9,61 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 <BaseLayout>
   <main class="max-w-[80ch] px-6 py-12">
     <hgroup class="font-poppins">
-      <h1 class="text-4xl mb-2">Alex Zenin</h1>
-      <h2 class="text-base text-gray-400 font-bold">Full-stack Software Engineer</h2>
+      <h1 class="text-4xl mb-2">Hi, I'm Alex!</h1>
     </hgroup>
     <section class="mt-8 text-md">
-      <h2 class="text-xl mb-4">About</h2>
       <p class="leading-relaxed">
-        Currently <span class="font-semibold text-gray-700">Frontend Lead</span> @ <a class="font-semibold no-underline text-yellow-600" href="https://reecetech.com.au" target="_blank"
+        I'm a full stack software engineer based in Melbourne, Australia. I'm especially passionate about frontend development, and take pride in my ability to craft high-quality,
+        user-friendly experiences.
+      </p>
+      <p class="leading-relaxed mt-2">
+        Currently, I'm <span class="font-semibold text-gray-700">Frontend Lead</span> @ <a class="font-semibold no-underline text-yellow-600" href="https://reecetech.com.au" target="_blank"
           >Reece</a
         >, building our next-gen POS system.
       </p>
-      <p class="leading-relaxed">
-        During my spare time, I work on a platform called <span class="font-semibold text-gray-700">Eventspace</span> that lets university students find events happening on campus.
-      </p>
+      <section>
+        <h2 class="text-xl mt-8 mb-4">Learning</h2>
+        <div>
+          <Checkbox text="Tao of React" done={true} />
+          <Checkbox text="Make VS Code Awesome" done={true} />
+          <Checkbox text="Epic React" done={true} />
+          <Checkbox text="Just Javascript" subtext="12/02/23" done={true} />
+          <Checkbox text="AWS Certified Solutions Architect (SAA-C03) 👨‍💻" done={false} />
+          <Checkbox text="Refactoring UI" done={false} />
+          <Checkbox text="Total Typescript" done={false} />
+          <Checkbox text="Grokking Algorithms" done={false} />
+        </div>
+      </section>
+      <nav class="flex flex-row items-baseline mt-12">
+        <a class="mr-7" href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
+        <a class="mr-7" href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
+        <a class="mr-7" href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
+      </nav>
     </section>
-    <section>
-      <h2 class="text-xl mt-8 mb-4">Learning</h2>
-      <div>
-        <Checkbox text="Tao of React" done={true} />
-        <Checkbox text="Make VS Code Awesome" done={true} />
-        <Checkbox text="Epic React" done={true} />
-        <Checkbox text="Just Javascript" subtext="12/02/23" done={true} />
-        <Checkbox text="AWS Certified Solutions Architect (SAA-C03) 👨‍💻" done={false} />
-        <Checkbox text="Refactoring UI" done={false} />
-        <Checkbox text="Total Typescript" done={false} />
-        <Checkbox text="Grokking Algorithms" done={false} />
-      </div>
-    </section>
-    <nav class="flex flex-row items-baseline mt-12">
-      <a class="mr-7" href="https://twitter.com/alexzenin2" target="_blank"><TwitterIcon /></a>
-      <a class="mr-7" href="https://github.com/alexzenin" target="_blank"><GithubIcon /></a>
-      <a class="mr-7" href="https://www.linkedin.com/in/alexanderzenin/" target="_blank"><LinkedinIcon /></a>
-    </nav>
   </main>
+
+  <style>
+    main {
+      animation: intro 0.4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
+    }
+    @keyframes intro {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- Global CSS since it targets the path element which is contained in other components -->
+  <style is:global>
+    nav > a:hover path {
+      fill: var(--color-foreground);
+    }
+
+    nav svg path {
+      fill: var(--color-font-less-contrast);
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  main {
-    animation: intro 0.4s cubic-bezier(0.49, 0.32, 0.55, 0.94);
-  }
-  @keyframes intro {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-
-<!-- Global CSS since it targets the path element which is contained in other components -->
-<style is:global>
-  nav > a:hover path {
-    fill: var(--color-foreground);
-  }
-
-  nav svg path {
-    fill: var(--color-font-less-contrast);
-  }
-</style>
