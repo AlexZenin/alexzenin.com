@@ -11,9 +11,11 @@
 }
 
 body {
-  height: 80vh;
-  display: grid;
-  place-items: center;
+   max-width: 600px;
+   margin: 0 auto;
+  /* height: 80vh; */
+  /* display: grid;
+  place-items: center; */
 }
 
 html {

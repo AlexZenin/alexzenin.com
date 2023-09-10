@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { rehypePrettyCode } from 'rehype-pretty-code';
 
 // https://astro.build/config
 import preact from '@astrojs/preact';
@@ -11,7 +12,5 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [preact(), tailwind(), mdx({
-        syntaxHighlight: 'shiki',
-    })]
+    integrations: [preact(), tailwind(), mdx()]
 });
