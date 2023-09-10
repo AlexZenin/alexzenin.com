@@ -14,7 +14,7 @@ tags: ['blogging']
 # Writing effective frontend unit tests
 
 Working accross multiple teams using ReactJS, I've often seen both bad, and great unit tests.
-This post is a collection of my thoughts around what not to do, and what makes a unit test effective.
+This post is a collection of my thoughts around what not to do, and what makes a unit test effective
 
 ## Bad Unit tests
 
