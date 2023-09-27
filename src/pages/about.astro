@@ -1,38 +1,48 @@
 ---
-import Header from '../components/Header.astro'
+import { Image } from "astro:assets";
 
-const pageTitle = 'About me'
-const hobbies = ['Programming', 'cooking', 'poker']
+import PageLayout from "@/layouts/Base";
+import aboutImg from "@/assets/about-astro.png";
 
-const skillColour = 'red'
-const fontWeight = 'bold'
-const textCase = 'uppercase'
-
-function getTitle() {
-  return pageTitle
-}
+const meta = {
+	title: "About",
+	description: "I'm a starter theme for Astro.build",
+};
 ---
 
-<html>
-  <head>
-    <title>{getTitle()}</title>
-    <style define:vars={{ skillColour, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColour);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <h1>{getTitle()}</h1>
-    <p>This is a page about me.</p>
-    <p>My hobbies are:</p>
-    <ul>{hobbies.map((hobby) => <li class="skill">{hobby}</li>)}</ul>
-  </body>
-</html>
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
+			website.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				src={aboutImg}
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</div>
+		<p>Here are my some of my awesome built in features:</p>
+		<ul class="list-inside list-disc">
+			<li>I'm ultra fast as I'm a static site</li>
+			<li>I'm fully responsive</li>
+			<li>I come with a light and dark mode</li>
+			<li>I'm easy to customise and add additional content</li>
+			<li>I have Tailwind CSS styling</li>
+			<li>Shiki code syntax highlighting</li>
+			<li>Satori for auto generating OG images for blog posts</li>
+		</ul>
+		<p>
+			Clone or fork my <a
+				class="cactus-link inline-block"
+				href="https://github.com/chrismwilliams/astro-cactus"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="github repository">repo</a
+			> if you like me!
+		</p>
+	</div>
+</PageLayout>
