@@ -2,52 +2,46 @@
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
+import Checkbox from "@/components/Checkbox";
 import { getAllPosts, sortMDByDate } from "@/utils";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: Array<{ title: string; desc: string; href: string }> = [
+const learnings: Array<{ text: string; completionDate?: string; done: boolean }> = [
 	{
-		title: "Astro",
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
+		text: "Tao of React",
+		done: true,
 	},
 	{
-		title: "Astro Assets",
-		desc: "Built-in optimized asset support.",
-		href: "https://docs.astro.build/en/guides/assets/",
+		text: "Make VS Code Awesome",
+		done: true,
 	},
 	{
-		title: "Tailwind CSS",
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
+		text: "Epic React",
+		done: true,
 	},
 	{
-		title: "Markdown",
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
+		text: "Just Javascript",
+		completionDate: "12/02/23",
+		done: true,
 	},
 	{
-		title: "MDX",
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
+		text: "Total Typescript 👨‍💻",
+		done: false,
 	},
 	{
-		title: "Satori",
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
+		text: "AWS Certified Solutions Architect (SAA-C03)",
+		done: false,
 	},
 	{
-		title: "Pagefind",
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
+		text: "Refactoring UI",
+		done: false,
 	},
 	{
-		title: "Astro Icon",
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
+		text: "Grokking Algorithms",
+		done: false,
 	},
 ];
 ---
@@ -75,23 +69,13 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 		</ul>
 	</section>
 	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<ul class="space-y-4 sm:space-y-2">
+		<h2 class="title mb-4 text-xl">Learning</h2>
+		<div>
 			{
-				cactusTech.map(({ href, title, desc }) => (
-					<li>
-						<a
-							href={href}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="cactus-link inline-block"
-						>
-							{title}
-						</a>
-						:<p class="inline-block sm:mt-2">{desc}</p>
-					</li>
+				learnings.map(({ text, completionDate, done }) => (
+					<Checkbox text={text} subtext={completionDate} done={done} />
 				))
 			}
-		</ul>
+		</div>
 	</section>
 </PageLayout>

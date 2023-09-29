@@ -16,7 +16,7 @@ export default defineConfig({
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		remarkRehype: { footnoteLabelProperties: { className: [""] } },
 		shikiConfig: {
-			theme: "dracula",
+			theme: "material-theme-palenight",
 			wrap: true,
 		},
 	},
