@@ -1,9 +1,8 @@
 ---
 title: "Forms in React"
-publishDate: "2 October 2023"
-description: "3 siple ways to get started with handling forms in React"
+publishDate: "5 October 2023"
+description: "How to get started with handling forms in React, and how to extend various options"
 tags: ["react", "beginner", "intermediate", "typescript"]
-draft: true
 ---
 
 Forms are a fundamental part of any web application. In React, there are a few key different ways to handle forms.
@@ -151,9 +150,11 @@ function handleInputChange(fieldName: string) {
 
 This `onChange` handler is also equivalent to `onChange={(e) => handleInputChange("password")(e)}`.
 
+### Making things more flexible
+
 While this curried function is great for input elements where you are trying to extract the `value` attribute, it doesn't work for all elements, or third-party components that expect handlers in the form `(value: string) => void`.
 
-To accomodate those cases, lets refactor, and update our function to take the value directly:
+To accomodate those cases, lets update our function to take the value directly:
 
 ```javascript
 function handleInputChange(fieldName: string) {
@@ -193,7 +194,7 @@ Now we have a flexible function we can use for both existing components and thir
 // ...
 ```
 
----
+### Putting it all together
 
 Finally, let's make the `handleInputChange` function fully type-safe by utilising generics, generic contraints, the `typeof` operator, and the `keyof` operator.
 
@@ -265,6 +266,6 @@ While it's certainly possible to do this with the methods we've covered so far, 
 
 At the time of writing, I would recommend [React Hook Form](https://react-hook-form.com/) if you're looking at adding additional functionality. Depending on when you're reading this, i would recommend reasearching what libraries are available, and what tradeoffs they have.
 
-To guide you in your research, I would recommend looking for libraries that are fully type-safe and work well with [zod](https://zod.dev/) for validation. Zod itself is fully type-safe, and current most popular validation library available.
+To guide you in your research, I would recommend looking for libraries that are fully type-safe and work well with [zod](https://zod.dev/) for validation. Zod itself is fully type-safe, and currently the most popular validation library available.
 
-Wishing you all the best in your React journey!
+Wishing you all the best in your journey with forms!
