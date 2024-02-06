@@ -13,7 +13,7 @@ In this post, we’ll look at main ways to get started, how to extend each optio
 
 We will start with the easiest way to get data from a form in React: using the `event` object that is passed to the `onSubmit` handler.
 
-This is the least extensible option, and i wouldn't recommend it for antyhing other than the most basic forms. However, it will lay the foundation for the other options, so it's worth understanding.
+This is the least extensible option, and I wouldn't recommend it for anything other than the most basic forms. However, it will lay the foundation for the other options, so it's worth understanding.
 
 Since the React docs has a great explainer of this method in the [`Input` element docs](https://react.dev/reference/react-dom/components/input#reading-the-input-values-when-submitting-a-form), I'll add it here for brevity:
 
@@ -81,11 +81,11 @@ We can achieve this using [controlled components](https://react.dev/learn/sharin
 
 ## Controlled forms
 
-"Controlled forms" is not an official term, but rather what i'm using to refer to forms where the state is stored in React state, and the input fields are controlled through the `value` and `onChange` props.
+"Controlled forms" is not an official term, but rather what I'm using to refer to forms where the state is stored in React state, and the input fields are controlled through the `value` and `onChange` props.
 
 **This shifts the source of truth from the DOM -> React state.**
 
-While more verbsose than the previous method, this gives us much greater control over the form state.
+While more verbose than the previous method, this gives us much greater control over the form state.
 
 ```javascript
 function LoginForm({ onSubmit }: Props) {
@@ -154,7 +154,7 @@ This `onChange` handler is also equivalent to `onChange={(e) => handleInputChang
 
 While this curried function is great for input elements where you are trying to extract the `value` attribute, it doesn't work for all elements, or third-party components that expect handlers in the form `(value: string) => void`.
 
-To accomodate those cases, lets update our function to take the value directly:
+To accommodate those cases, let's update our function to take the value directly:
 
 ```javascript
 function handleInputChange(fieldName: string) {
@@ -264,7 +264,7 @@ However when crafting a great user experience, we often want to add additional f
 
 While it's certainly possible to do this with the methods we've covered so far, there are fantastic libraries that make this much easier.
 
-At the time of writing, I would recommend [React Hook Form](https://react-hook-form.com/) if you're looking at adding additional functionality. Depending on when you're reading this, i would recommend reasearching what libraries are available, and what tradeoffs they have.
+At the time of writing, I would recommend [React Hook Form](https://react-hook-form.com/) if you're looking at adding additional functionality. Depending on when you're reading this, I would recommend reasearching what libraries are available, and what tradeoffs they have.
 
 To guide you in your research, I would recommend looking for libraries that are fully type-safe and work well with [zod](https://zod.dev/) for validation. Zod itself is fully type-safe, and currently the most popular validation library available.
 
