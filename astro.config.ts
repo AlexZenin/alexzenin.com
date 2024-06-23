@@ -7,6 +7,7 @@ import prefetch from "@astrojs/prefetch";
 import remarkUnwrapImages from "remark-unwrap-images";
 // @ts-ignore:next-line
 import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
 		}),
 		sitemap(),
 		prefetch(),
+		react(),
 	],
 	vite: {
 		plugins: [rawFonts([".ttf"])],
