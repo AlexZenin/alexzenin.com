@@ -2,7 +2,7 @@
 title: "Writing effective unit tests in React"
 publishDate: "29 January 2023"
 description: "How to write effective unit tests in React, and what to avoid"
-tags: ["reactjs"]
+tags: ["react", "testing"]
 draft: true
 ---
 
