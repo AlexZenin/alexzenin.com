@@ -7,10 +7,14 @@ const url = new URL(Astro.request.url);
 ---
 
 <script>
-	import { toggleClass } from "@/utils";
 	let headerEl: HTMLElement;
 	let menuButtonEl: HTMLButtonElement;
 	let menuOpen = false;
+
+	// TODO: Extract to utils
+	function toggleClass(element: HTMLElement, className: string) {
+		element.classList.toggle(className);
+	}
 
 	function toggleMobileMenu() {
 		toggleClass(headerEl, "menu-open");

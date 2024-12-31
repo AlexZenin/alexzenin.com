@@ -9,6 +9,7 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
+// TODO: Extract to collection
 const learnings: Array<{ text: string; completionDate?: string; done: boolean }> = [
 	{
 		text: "Tao of React",
